@@ -10,12 +10,6 @@ describe("Calculadora :") do
 
     "-------------CORRETOS-------------"
 
-    it("SOMA - Um dos números não deve ser nulo.") do 
-        first_number = 5
-        second_number = 5
-        expect(calculadora.sum(first_number,second_number)).not_to be_nil
-    end
-
     it("SOMA - Deve somar dois números inteiros positivos.") do 
         first_number = 5
         second_number = 5
@@ -28,18 +22,17 @@ describe("Calculadora :") do
         expect(calculadora.sum(first_number,second_number)).to eq -10
     end
 
-    # it("SOMA - A resposta da soma de dois números inteiros negativos deve ser negativa.") do 
-    #     first_number = -5
-    #     second_number = -5
-    #     expect(calculadora.sum(first_number,second_number)).to output(/-10/)
-    # end
-
     it("SOMA - Deve somar dois números inteiros positivos com casas decimais.") do 
         first_number = 50.5
         second_number = 70.6
         expect(calculadora.sum(first_number,second_number)).to eq 121.1
     end
 
+    it("SOMA - Deve somar dois números inteiros negativos com casas decimais.") do 
+        first_number = -50.5
+        second_number = -70.6
+        expect(calculadora.sum(first_number,second_number)).to eq -121.1
+    end
 
     it("SOMA - O resultado da soma deve ser do tipo Float.") do 
         first_number = 50.5
@@ -48,7 +41,7 @@ describe("Calculadora :") do
         expect(calculadora.sum(first_number,second_number)).to be_kind_of(Float)
     end
 
-     it("SOMA - O resultado da soma deve ser do tipo Númerico.") do 
+    it("SOMA - O resultado da soma deve ser do tipo Númerico.") do 
         first_number = 5
         second_number = 5
         expect(calculadora.sum(first_number,second_number)).to be_kind_of(Numeric)
@@ -62,46 +55,71 @@ describe("Calculadora :") do
     #     expect(calculadora.sum(first_number,second_number)).not_to be_nil
     #  end
 
-    # it("SOMA - O resultado da soma deve ser do tipo Númerico") do 
+    # it("SOMA - O resultado da soma de números inteiros não deve ser do tipo String") do 
     #     first_number = 5
     #     second_number = "5"
     #     expect(calculadora.sum(first_number,second_number)).to be_kind_of(Numeric)
     # end
 
-    #  it("SOMA - O resultado da soma deve ser do tipo Float.") do 
+    #  it("SOMA - O resultado da soma de números com casas decimais não deve ser do tipo String.") do 
     #      first_number = 50.0
     #      second_number = "70.0"
     #      # Resposta = 121.1
     #      expect(calculadora.sum(first_number,second_number)).to be_kind_of(Float)
     #  end
 
+    # it("SOMA - Não deve haver caracteres especiais nas escolhas dos números positivos.") do 
+    #     first_number = 5
+    #     second_number = "$"
+    #     expect(calculadora.sum(first_number,second_number)).to be_kind_of(Numeric)
+    # end
+
+    # it("SOMA - Não deve haver caracteres especiais nas escolhas dos números com casas decimais.") do 
+    #     first_number = 10.5
+    #     second_number = "$"
+    #     expect(calculadora.sum(first_number,second_number)).to be_kind_of(Float)
+    # end
+
+
 # TESTE SUBTRAÇÃO
 
     "-------------CORRETOS-------------"
 
-    it("SUBTRAÇÃO - Um dos números não deve ser nulo.") do 
-        first_number = 5
-        second_number = 5
-        expect(calculadora.subtraction(first_number,second_number)).not_to be_nil
-    end
-
-    it("SUBTRAÇÃO - Deve subtrair dois números inteiros.") do 
+    it("SUBTRAÇÃO - Deve subtrair dois números inteiros positivos.") do 
         first_number = 10
         second_number = 5
         expect(calculadora.subtraction(first_number,second_number)).to eq 5
     end
 
-    it("SUBTRAÇÃO - Deve subtrair dois números inteiros com casas decimais.") do 
+    it("SUBTRAÇÃO - Deve subtrair dois números inteiros negativos.") do 
+        first_number = -10
+        second_number = -5
+        expect(calculadora.subtraction(first_number,second_number)).to eq -5
+    end
+
+    it("SUBTRAÇÃO - Deve subtrair dois números inteiros positivos com casas decimais.") do 
          first_number = 50.5
          second_number = 70.6
          expect(calculadora.subtraction(first_number,second_number)).to eq -20.1
     end
 
+    it("SUBTRAÇÃO - Deve subtrair dois números inteiros negativos com casas decimais.") do 
+        first_number = -50.5
+        second_number = -70.6
+        expect(calculadora.subtraction(first_number,second_number)).to eq 20.1
+   end
+
     it("SUBTRAÇÃO - O resultado da subtração com casas decimais deve ser do tipo Float") do 
         first_number = 50.5
         second_number = 70.6
         expect(calculadora.subtraction(first_number,second_number)).to be_kind_of(Float)
-   end
+    end
+
+    it("SUBTRAÇÃO - O resultado da subtração com casas decimais deve ser do tipo Númerico") do 
+        first_number = 10
+        second_number = 5
+        expect(calculadora.subtraction(first_number,second_number)).to be_kind_of(Numeric)
+    end
 
     it("SUBTRAÇÃO - Subtrair dois número sendo o primeiro menor que o segundo.") do 
         first_number = 20
@@ -116,17 +134,35 @@ describe("Calculadora :") do
     #     second_number = 
     #     expect(calculadora.subtraction(first_number,second_number)).not_to be_nil
     # end
+
+    # it("SUBTRAÇÃO - O resultado da subtração não deve ser do tipo String") do 
+    #     first_number = 20
+    #     second_number = "50"
+    #     expect(calculadora.subtraction(first_number,second_number)).to be_kind_of(Numeric)
+    # end
+
+    # it("SUBTRAÇÃO - O resultado da subtração com casas decimais não deve ser do tipo String") do 
+    #     first_number = 50.5
+    #     second_number = "70.6"
+    #     expect(calculadora.subtraction(first_number,second_number)).to be_kind_of(Float)
+    # end
+
+    # it("SUBTRAÇÃO - Não deve haver caracteres especiais nas escolhas dos números inteiros.") do 
+    #     first_number = 5
+    #     second_number = "$"
+    #     expect(calculadora.subtraction(first_number,second_number)).to be_kind_of(Numeric)
+    # end
+
+    # it("SUBTRAÇÃO - Não deve haver caracteres especiais nas escolhas dos números com casas decimais.") do 
+    #     first_number = 10.5
+    #     second_number = "$"
+    #     expect(calculadora.subtraction(first_number,second_number)).to be_kind_of(Float)
+    # end
     
 
 # TESTE DIVISÃO
 
     "-------------CORRETOS-------------"
-
-    it("DIVISÃO - Um dos números não deve ser nulo.") do 
-        first_number = 5
-        second_number = 5
-        expect(calculadora.division(first_number,second_number)).not_to be_nil
-    end
 
     it("DIVISÃO - Deve dividir dois números inteiros positivos.") do 
         first_number = 10
@@ -162,6 +198,38 @@ describe("Calculadora :") do
         first_number = 70.6
         second_number = 50.5
         expect(calculadora.division(first_number,second_number)).to be_kind_of(Numeric)
+    end
+
+    "-------------ERRADOS-------------"
+
+    it("DIVISÃO - Um dos números não deve ser nulo.") do 
+        first_number = 5
+        second_number = 
+        expect(calculadora.division(first_number,second_number)).not_to be_nil
+    end
+
+    it("DIVISÃO - O resultado da divisão não deve ser do tipo String") do 
+         first_number = 20
+         second_number = "50"
+         expect(calculadora.division(first_number,second_number)).to be_kind_of(Numeric)
+    end
+
+    it("DIVISÃO - O resultado da divisão com casas decimais não deve ser do tipo String") do 
+         first_number = 50.5
+         second_number = "70.6"
+         expect(calculadora.division(first_number,second_number)).to be_kind_of(Float)
+    end
+
+    it("DIVISÃO - Não deve haver caracteres especiais nas escolhas dos números inteiros.") do 
+         first_number = 5
+         second_number = "$"
+         expect(calculadora.division(first_number,second_number)).to be_kind_of(Numeric)
+    end
+
+    it("DIVISÃO - Não deve haver caracteres especiais nas escolhas dos números com casas decimais.") do 
+         first_number = 10.5
+         second_number = "$"
+         expect(calculadora.division(first_number,second_number)).to be_kind_of(Float)
     end
 
 # TESTE MULTIPLICAÇÃO
@@ -248,33 +316,54 @@ describe("Calculadora :") do
 
     "-------------CORRETOS-------------"
 
+    it("RAIZ QUADRADA - A escolha de um dos números não deve ser nula.") do
+        first_number = 25
+        expect(calculadora.raizQuadrada(first_number)).not_to be_nil
+    end
+
+    it("RAIZ QUADRADA - Deve obter a raiz quadrada do número especificado.") do
+        first_number = 25
+        expect(calculadora.raizQuadrada(first_number)).to eq 5
+    end
+
+    it("RAIZ QUADRADA - Deve obter a raiz quadrada de números com casas decimais.") do
+        first_number = 1.69
+        expect(calculadora.raizQuadrada(first_number)).to eq 1.3
+    end
+
+    
+
+    "-------------ERRADOS-------------"
+
+    # it("RAIZ QUADRADA - Deve obter a raiz quadrada de um número negativo") do
+    #     first_number = - 16
+    #     expect(calculadora.raizQuadrada(first_number)).to eq 4
+    # end  
+    # não aceita numeros negativos ?
    
-
-end
-
-
-
-
-# it("O resultado da soma deve ser do tipo Númerico") do 
-#     expect(calculadora.sum(5,4)).to be_kind_of(Numeric)
-# end
-
-# # TESTE SUBTRAÇÃO
-
-# # TESTE DIVISÃO
-
-# it("O resultado da divisão deve ter casas decimais") do 
-#     expect(calculadora.division(100,6)).to eq 16
-# end
-
-# # TESTE MULTIPLICAÇÃO
-
-# # TESTE RESTO DA DIVISÃO
-
-# # TESTE RAIZ QUADRADA
 
 # TESTE DO PI
 
-# it("Deve calcular a raiz quadrada do número") do 
-#     expect(calculadora.raizQuadrada(25)).to eq 5
-# end
+    "-------------CORRETOS-------------"
+
+    it("PI - Deve obter o resultado do PI") do
+        first_number = 25
+        expect(calculadora.pi(first_number)).to eq 78.5
+    end
+
+    it("PI - Deve obter o resultado de um PI negativo.") do
+        first_number = -25
+        expect(calculadora.pi(first_number)).to eq -78.5
+    end
+
+    it("PI - Deve obter o resultado de um PI com casas decimais.") do
+        first_number = 3.14
+        expect(calculadora.pi(first_number)).to eq 9.9
+    end
+
+    it("PI - Deve obter o resultado de um PI com casas decimais negativo") do
+        first_number = -3.14
+        expect(calculadora.pi(first_number)).to eq -9.9
+    end
+
+end
