@@ -24,15 +24,15 @@ class Calculadora
 
 
     def restoDivisao(first_number,second_number)
-        first_number % second_number
-        # result.round(2)
+        result = first_number % second_number
+        result.round(1)
     end
 
 
     def raizQuadrada(first_number)
         Math.sqrt(first_number)
     end
-    
+
 
     def pi(first_number)
         $valuePi = 3.14
