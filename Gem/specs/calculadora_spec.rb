@@ -590,6 +590,4 @@ describe("Calculadora :") do
     end
     
 
-    
-
 end
