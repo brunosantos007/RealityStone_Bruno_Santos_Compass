@@ -224,8 +224,8 @@ describe("Calculadora :") do
     end
 
     it("DIVISÃO - O resultado da divisão dos numeros inteiros deve ser do tipo Numerico") do 
-        first_number = 70.6
-        second_number = 50.5
+        first_number = 10
+        second_number = 5
         expect(calculadora.division(first_number,second_number)).to be_kind_of(Numeric)
     end
 
@@ -524,7 +524,7 @@ describe("Calculadora :") do
 
     it("RAIZ QUADRADA - Não deve haver caracteres especiais na escolha do número.") do 
             first_number = "$"
-            expect(calculadora.restoDivisao(first_number)).to be_kind_of(Numeric)
+            expect(calculadora.raizQuadrada(first_number)).to be_kind_of(Numeric)
     end
    
 

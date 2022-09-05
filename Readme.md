@@ -41,6 +41,7 @@
 <ul>
   <li>Abra o CMDER</li>
   <li>Com o CMDER devidamente iniciado, digite cd e o caminho que esta a pasta para o teste</li>
+  <li>Com a pasta selecionada, execute o comando : bundle install, para instalarmos a gema na devida pasta.</li>
   <li>Execute o código seguinte dentro do CMDER: bundle exec rspec specs\calculadora_spec.rb</li>
 </ul>
 
