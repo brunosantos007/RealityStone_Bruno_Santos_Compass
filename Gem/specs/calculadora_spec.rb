@@ -588,6 +588,8 @@ describe("Calculadora :") do
             first_number = "$"
             expect(calculadora.pi(first_number)).to be_kind_of(Numeric)
     end
+    
 
+    
 
 end
